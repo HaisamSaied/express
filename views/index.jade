@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  .header 
+    span.header__title WeSellSneakers
+    img.header__image(src='/images/icon.png')
+  
+  nav.navbar
+    .navbar__container
+      each link in links
+        a.navbar__link(href=link.href) #{link.name}
+  .body 
+  //- .wrapper
+  p Our Products
+  .product__list
+    each shoe in shoes
+      .product__item
+        img.product__image(src=shoe.image)      
+        .product__caption
+          .product__title=shoe.name
+          .product__price $#{shoe.price}
+          
+  if path == '/shoes' 
+    #{products.shoes} 
+  else if path == '/headbands' 
+    #{products.headbands}
+     
+    each headband in headbands
+      .product__item
+        img.product__image(src=headband.image)      
+        .product__caption
+          .product__title=headband.name
+          .product__price $#{headband.price}
+  .footer 
+    h1 (703)221-6351
+    h2 blahblahblah@gmail.com 
+    h3 1234 Whatever Street Someplace, Country 54321
+    
+  
+          //- .product__description=product.description
+    
+    //- img.img-small(src='/images/jordan1.jpg') 
+    //- img.img-small(src='images/jordan2.png')
+    //- img.img-medium(src='/images/jordan3.jpg')
+    //- img.img-large(src='/images/jordan4.jpg')
+    //- img.img-small(src='/images/jordan5.jpg')
+    //- img.img-small(src='/images/jordan6.jpg')
+    
+    
+
+      
+  
