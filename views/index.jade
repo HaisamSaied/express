@@ -12,25 +12,24 @@ block content
   .body 
   //- .wrapper
   p Our Products
-  .product__list
-    each shoe in shoes
-      .product__item
-        img.product__image(src=shoe.image)      
-        .product__caption
-          .product__title=shoe.name
-          .product__price $#{shoe.price}
+  
           
-  if path == '/shoes' 
-    #{products.shoes} 
-  else if path == '/headbands' 
-    #{products.headbands}
-     
-    each headband in headbands
-      .product__item
-        img.product__image(src=headband.image)      
-        .product__caption
-          .product__title=headband.name
-          .product__price $#{headband.price}
+  if path === '/shoes' 
+    .product__list
+      each shoe in shoes
+        .product__item
+          img.product__image(src=shoe.image)      
+          .product__caption
+            .product__title=shoe.name
+            .product__price $#{shoe.price}
+  if path === '/headbands' 
+    .product__list
+      each headband in headbands
+        .product__item
+          img.product__image(src=headband.image)      
+          .product__caption
+            .product__title=headband.name
+            .product__price $#{headband.price}
   .footer 
     h1 (703)221-6351
     h2 blahblahblah@gmail.com 

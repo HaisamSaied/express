@@ -5,26 +5,27 @@ var products = require('../api/data/products');
 var links = require('../api/data/links');
 console.log(products);
 
+var pageParams = {
+  title: 'Express',
+};
+pageParams['shoes'] = products.shoes;
+pageParams['headbands'] = products.headbands;
+pageParams['links'] = links;
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var pageParams = {
-    title: 'Express',
-  };
-  pageParams['shoes'] = products.shoes;
-  pageParams['headbands'] = products.headbands;
-  pageParams['links'] = links;
-  //-
+  pageParams['path'] = req.path;
   res.render('index', pageParams);
 });
 
 
 router.get('/shoes', function(req, res, next) {
-  pageParams['shoes'] = products.shoes;
+  pageParams['path'] = req.path;
   res.render('index', pageParams);
 });
 
 router.get('/headbands', function(req, res, next) {
-  pageParams['headbands'] = products.headbands; 
+  pageParams['path'] = req.path;
   res.render('index', pageParams);
 });
 
