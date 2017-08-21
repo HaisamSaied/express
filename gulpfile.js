@@ -35,7 +35,7 @@ gulp.task('lint-all', function() {
 gulp.task('sass', function() {
   return gulp.src(paths.sass)
     .pipe(sass())
-    // .pipe(gulp.dest('public/stylesheets'))
+    .pipe(gulp.dest('public/stylesheets'))
     .pipe(autoprefixer({
         browsers: ['> 5%'],
         cascade: false

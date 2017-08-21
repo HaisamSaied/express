@@ -1,0 +1,48 @@
+extends layout 
+
+block content 
+  .login
+    .login__section
+      .login__form
+        .form-login__logo
+          img(src='/images/PALOGO.png', height="120px")
+        form.form-login
+          h4.form-login__header Let's get started.
+          p.form-login__subheading Enter your login details below to access your donor portal.
+          label.form-login__label Username:
+          input.form-login__input(type="text", name="username")
+          label.form-login__label Password:
+          input.form-login__input(type="password", name="password")
+          button.form-login__button.form-login__button--submit(type="submit") Log In
+          input.form-login__checkbox(type="checkbox")
+          p.form-login__checkbox--text Keep me logged in.
+    .login__section.login__section--image(style="background-image:url('https://pennyappealusa.org/static/images/programs/digital-divide/pausa_e2d_charlotte-min.jpg');")
+
+
+
+
+  //- .background 
+  //-   img.header__images(src='/images/PALOGO.png')
+  //- p Let's get started. 
+  //- h2 Enter your login details below to access your donor portal 
+  //- 
+  //- form.form-login(method="POST", action="/api/dashboard/login")
+  //-   input.form-login__input(type="text", name="username")
+  //-   input(type="password", name="password")
+  //-   button(type="submit")
+  //- .form 
+    //Username 
+    //Password
+    
+//- .button Log In 
+//- 
+//- //checkbox Keep me logged in. 
+//- 
+//- p2 Forgot your username? 
+//-   //Forgot your password  
+//-   
+//- p3 Not registered? 
+//-   p4 Click Here   
+   
+      
+    

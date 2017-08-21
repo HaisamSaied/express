@@ -29,6 +29,10 @@ router.get('/headbands', function(req, res, next) {
   res.render('index', pageParams);
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('login', { login: true });
+});
+
 
 
 module.exports = router;

@@ -3,5 +3,5 @@ module.exports = [
   { href: '/shoes', name: 'Shoes'},
   { href: '/headbands', name: 'Headbands'},
   { href: '/about', name: 'About'},
-  { href:"/contact", name:"Contact"}
+  { href:"/login", name:"Login"}
 ]
