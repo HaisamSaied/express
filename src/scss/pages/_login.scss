@@ -25,6 +25,7 @@ $font-color: $gray;
     @include justify-content(center);
 
     @include m('image') {
+      position: relative;
       background-size: cover;
       background-position: 50% 50%;
 
@@ -34,10 +35,28 @@ $font-color: $gray;
     }
   }
 
-  @include e('form') {
+  @include e('more'){
     max-width: 500px;
-    padding: 10px;
+    height: 80px;
+    padding: 15px;
+    background-color: #fff;
+    top: 800px;
+    position: absolute;
+    text-decoration: underline;
+    font-size: 1.2em;
+    color: $gray;
+    font-style: $font-body;
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+  }
+
+  @include e('form') {
+    max-width: 400px;
+    padding: 25px;
     margin: 0 auto;
+    background-color: white;
     // background: #f0f0f0;
     @include flexbox;
     @include flex-direction(column);
@@ -60,7 +79,7 @@ $font-color: $gray;
   }
 
   @include e('header') {
-    font-size: 1.8em;
+    font-size: 2.0em;
     margin-bottom: 10px;
     line-height: 1.2em;
     font-family: $font-header;
@@ -99,6 +118,8 @@ $font-color: $gray;
     font-weight: 500;
     margin-bottom: 1em;
     border: 0px;
+    background-color: $yellow;
+  }
     &:hover {
       cursor: pointer;
     }
@@ -107,5 +128,62 @@ $font-color: $gray;
       background: $yellow;
     }
 
-  }
+    @include e('checkbox'){
+      display: inline-block;
+      transform:scale(2, 2);
+      background-color: $gray;
+      // float: left;
+      margin-left: 5px;
+      margin-right: 20px;
+
+      @include m('container') {
+        @include flexbox;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(flex-start);
+        margin-bottom: 20px;
+      }
+
+      @include m('text') {
+        font-family: $font-body;
+        color: $gray;
+        font-weight: bold;
+        font-size: 1em;
+        // margin-bottom: 20px;
+        // float: left;
+      }
+    }
+
+    @include e('link') {
+      margin-bottom: 20px;
+    }
+
+    @include e('username'){
+    font-family: $font-body;
+    color: $gray;
+    font-size: 1em;
+    float: left;
+    text-decoration: underline;
+    }
+
+
+    @include e('registered'){
+    font-family: $font-body;
+    color: $gray;
+    font-size:1em;
+    float: left;
+    margin-right: 5px;
+    @include flexbox;
+    @include flex-direction(row);
+    }
+
+    @include e('click'){
+    font-family: $font-body;
+    color: $gray;
+    font-size: 1em;
+    float: left;
+    text-decoration: underline;
+    @include flexbox;
+    @include flex-direction(row); }
+
 }

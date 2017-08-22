@@ -5,7 +5,7 @@ block content
     .login__section
       .login__form
         .form-login__logo
-          img(src='/images/PALOGO.png', height="120px")
+            img(src='/images/PALOGO.png', height="120px")
         form.form-login
           h4.form-login__header Let's get started.
           p.form-login__subheading Enter your login details below to access your donor portal.
@@ -14,35 +14,17 @@ block content
           label.form-login__label Password:
           input.form-login__input(type="password", name="password")
           button.form-login__button.form-login__button--submit(type="submit") Log In
-          input.form-login__checkbox(type="checkbox")
-          p.form-login__checkbox--text Keep me logged in.
+          .form-login__checkbox--container
+            input.form-login__checkbox(type="checkbox")
+            p.form-login__checkbox--text Keep me logged in.
+          
+          p.form-login__link.form-login__username Forgot your username? | Forgot your password? 
+  
+          p.form-login__link.form-login__registered Not registered? 
+          p.form-login__link.form-login__click Click here.
     .login__section.login__section--image(style="background-image:url('https://pennyappealusa.org/static/images/programs/digital-divide/pausa_e2d_charlotte-min.jpg');")
+      .login__more Click here to learn how we're making strides to bridge the digital divide in low-income school districts 
 
-
-
-
-  //- .background 
-  //-   img.header__images(src='/images/PALOGO.png')
-  //- p Let's get started. 
-  //- h2 Enter your login details below to access your donor portal 
-  //- 
-  //- form.form-login(method="POST", action="/api/dashboard/login")
-  //-   input.form-login__input(type="text", name="username")
-  //-   input(type="password", name="password")
-  //-   button(type="submit")
-  //- .form 
-    //Username 
-    //Password
-    
-//- .button Log In 
-//- 
-//- //checkbox Keep me logged in. 
-//- 
-//- p2 Forgot your username? 
-//-   //Forgot your password  
-//-   
-//- p3 Not registered? 
-//-   p4 Click Here   
    
       
     
