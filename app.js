@@ -4,6 +4,35 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+
+//mongodb connection
+var db = mongoose.connection;
+var uri = "mongodb://localhost:5000/";
+
+mongoose.Promise = global.Promise;
+mongoose.connect(uri, {useMongoClient: true})
+.then(({db: {databaseName}}) => console.log(`Connected to ${databaseName}`))
+.catch(err => console.error(err));
+
+// mongo error
+db.on('error', console.error.bind(console, 'connection error:'));
+
+// db.once('open', function() {
+//   console.log('connected to mongodb database');
+// });
+
+db.on('disconnected', function () {
+   //Reconnect on timeout
+   if (process.env.NODE_EN==="production") {
+     mongoose.connect(process.env.MONGODB_URI);
+     db = mongoose.connection;
+   } else {
+     mongoose.connect(process.env.MONGODB_DEV_URI);
+     db = mongoose.connection;
+   }
+});
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -18,7 +47,7 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

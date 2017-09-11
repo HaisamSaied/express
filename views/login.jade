@@ -6,22 +6,43 @@ block content
       .login__form
         .form-login__logo
             img(src='/images/PALOGO.png', height="120px")
-        form.form-login
-          h4.form-login__header Let's get started.
-          p.form-login__subheading Enter your login details below to access your donor portal.
-          label.form-login__label Username:
-          input.form-login__input(type="text", name="username")
-          label.form-login__label Password:
-          input.form-login__input(type="password", name="password")
-          button.form-login__button.form-login__button--submit(type="submit") Log In
-          .form-login__checkbox--container
-            input.form-login__checkbox(type="checkbox")
-            p.form-login__checkbox--text Keep me logged in.
-          
-          p.form-login__link.form-login__username Forgot your username? | Forgot your password? 
-  
-          p.form-login__link.form-login__registered Not registered? 
-          p.form-login__link.form-login__click Click here.
+        if login
+          form.form-login(action="/login", method="POST")
+            h4.form-login__header Let's get started.
+            p.form-login__subheading Enter your login details below to access your donor portal.
+            label.form-login__label Username:
+            input.form-login__input(type="text", name="username")
+            label.form-login__label Password:
+            input.form-login__input(type="password", name="password")
+            button.form-login__button.form-login__button--submit(type="submit") Log In
+            .form-login__checkbox--container
+              input.form-login__checkbox(type="checkbox")
+              p.form-login__checkbox--text Keep me logged in.
+            
+            p.form-login__link.form-login__username Forgot your username? | Forgot your password? 
+    
+            p.form-login__link.form-login__registered Not registered? 
+            p.form-login__link.form-login__click Click Here
+        else
+          form.form-login(action="/register", method="POST")
+            h4.form-login__header Let's get started.
+            p.form-login__subheading Let's get you registered to access all of the goodies inside.
+            label.form-login__label Username:
+            input.form-login__input(type="text", name="username")
+            label.form-login__label Email:
+            input.form-login__input(type="email", name="email")
+            label.form-login__label Password:
+            input.form-login__input(type="password", name="password")
+            label.form-login__label Verify password:
+            input.form-login__input(type="password", name="confirmPassword")
+            button.form-login__button.form-login__button--submit(type="submit") Sign Up
+            //- .form-login__checkbox--container
+            //-   input.form-login__checkbox(type="checkbox")
+            //-   p.form-login__checkbox--text Keep me logged in.
+
+    
+            p.form-login__link.form-login__registered Already registered? 
+            p.form-login__link.form-login__click Click here.
     .login__section.login__section--image(style="background-image:url('https://pennyappealusa.org/static/images/programs/digital-divide/pausa_e2d_charlotte-min.jpg');")
       .login__more Click here to learn how we're making strides to bridge the digital divide in low-income school districts 
 
